@@ -9,10 +9,11 @@
             <i class="fa fa-star"></i>
         </div>
     </section>
-    <section>
-        <del class="small text-black-50">${{@price.original}}</del>
-        <i class="text-danger font-weight-bold">{{@price.current}}</i>
+    <section class={{unless @isDetails 'h4' }}>
+        <del class="small text-black-50">{{curreny @price.original}}</del>
+        <i class="text-danger font-weight-bold">{{curreny @price.current}}</i>
     </section>
+    {{#if @isDetails}}
     <div>
         <h5>Color</h5>
         <div class="product-colors active-{{@color}}">
@@ -22,4 +23,5 @@
             {{/each}}
         </div>
     </div>
+    {{/if}}
 </div>
